@@ -1,0 +1,3 @@
+[submodule "Minecraft-Clone/vendor/GLFW"]
+	path = Minecraft-Clone/vendor/GLFW
+	url = https://github.com/glfw/glfw
