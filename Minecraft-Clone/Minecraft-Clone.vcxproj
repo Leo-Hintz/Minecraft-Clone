@@ -86,12 +86,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;STB_IMAGE_IMPLEMENTATION</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Minecraft-Clone/vendor/GLAD/build/include;$(SolutionDir)Minecraft-Clone/vendor/GLFW/include;$(SolutionDir)Minecraft-Clone/vendor/glm;$(ProjectDir)source;$(ProjectDir)vendor/STB_IMAGE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Minecraft-Clone/vendor/GLAD/build/Release;$(SolutionDir)Minecraft-Clone/vendor/GLFW/build/src/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,26 +103,32 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;STB_IMAGE_IMPLEMENTATION</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Minecraft-Clone/vendor/GLAD/build/include;$(SolutionDir)Minecraft-Clone/vendor/GLFW/include;$(SolutionDir)Minecraft-Clone/vendor/glm;$(ProjectDir)source;$(ProjectDir)vendor/STB_IMAGE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Minecraft-Clone/vendor/GLAD/build/Release;$(SolutionDir)Minecraft-Clone/vendor/GLFW/build/src/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;STB_IMAGE_IMPLEMENTATION</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Minecraft-Clone/vendor/GLAD/build/include;$(SolutionDir)Minecraft-Clone/vendor/GLFW/include;$(SolutionDir)Minecraft-Clone/vendor/glm;$(ProjectDir)source;$(ProjectDir)vendor/STB_IMAGE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Minecraft-Clone/vendor/GLAD/build/Release;$(SolutionDir)Minecraft-Clone/vendor/GLFW/build/src/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,18 +137,44 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;STB_IMAGE_IMPLEMENTATION</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Minecraft-Clone/vendor/GLAD/build/include;$(SolutionDir)Minecraft-Clone/vendor/GLFW/include;$(SolutionDir)Minecraft-Clone/vendor/glm;$(ProjectDir)source;$(ProjectDir)vendor/STB_IMAGE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Minecraft-Clone/vendor/GLAD/build/Release;$(SolutionDir)Minecraft-Clone/vendor/GLFW/build/src/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\Renderer\Camera\Camera.cpp" />
+    <ClCompile Include="source\Renderer\Shader.cpp" />
+    <ClCompile Include="source\Layers\GameLayer.cpp" />
+    <ClCompile Include="source\Renderer\Renderer.cpp" />
+    <ClCompile Include="source\Application.cpp" />
+    <ClCompile Include="source\Layers\Layersystem.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\Renderer\Textures\Texture.cpp" />
+    <ClCompile Include="source\Window\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Renderer\Camera\Camera.h" />
+    <ClInclude Include="source\Renderer\Shader.h" />
+    <ClInclude Include="source\Layers\GameLayer.h" />
+    <ClInclude Include="source\Renderer\Renderer.h" />
+    <ClInclude Include="source\Events\Event.h" />
+    <ClInclude Include="source\Application.h" />
+    <ClInclude Include="source\Layers\Layersystem.h" />
+    <ClInclude Include="source\Misc\Utility.h" />
+    <ClInclude Include="source\Renderer\Textures\Texture.h" />
+    <ClInclude Include="vendor\STB_IMAGE\stb_image.h">
+      <DeploymentContent>true</DeploymentContent>
+    </ClInclude>
+    <ClInclude Include="source\Window\Window.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

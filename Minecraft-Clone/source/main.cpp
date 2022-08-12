@@ -1,6 +1,7 @@
 #include <iostream>
-
+#include <Application.h>
 int main()
 {
-	std::cout << "Minecraft\n";
+	Application app;
+	app.Run();
 }
